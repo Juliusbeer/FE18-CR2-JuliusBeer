@@ -43,8 +43,19 @@ navbar.innerHTML = ` <nav class="navbar navbar-expand-lg bg-body-tertiary" data-
 </div>
 </nav>`
 
+//Sort
+// let priolink = document.getElementById("priority");
+
+// Don't know now
+// priolink.addEventListener("click",
+//     data.sort((a, b) => {
+//         return a.priority - b.priority;
+//     })
+// )
 
 
+
+console.log(data);
 
 //Cards
 for (i = 0; i < data.length; i++) {
@@ -91,6 +102,8 @@ for (let i = 0; i < priobtns.length; i++) {
     })
 
 }
+
+
 
 //Done
 let donebtns = document.getElementsByClassName("donebtn");
