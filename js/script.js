@@ -29,7 +29,8 @@ for (let i = 0; i < priobtns.length; i++) {
     priobtns[i].addEventListener("click", function() {
         data[i].priority++;
         // console.log(people[i].like);
-        document.getElementsByClassName("priobtn")[i].innerHTML = data[i].priority;
+        priobtns[i].innerHTML = data[i].priority;
+
     })
 
 }
@@ -49,15 +50,15 @@ for (let i = 0; i < donebtns.length; i++) {
 }
 
 //Delete
-let deletebtns = document.getElementsByClassName("deletebtn");
-console.log(deletebtns);
+// let deletebtns = document.getElementsByClassName("deletebtn");
+// console.log(deletebtns);
 
-for (let i = 0; i < donebtns.length; i++) {
-    deletebtns[i].addEventListener("click", function() {
-        document.getElementsByClassName("card")[i].remove();
+// for (let i = 0; i < donebtns.length; i++) {
+//     deletebtns[i].addEventListener("click", function() {
+//         document.getElementsByClassName("card")[i].remove();                             I don't knwo right now, how to make it respond to the change of the index..
 
-        // document.getElementsByClassName("tcolor")[i].style.color = "red";
+//         // document.getElementsByClassName("tcolor")[i].style.color = "red";
 
 
-    })
-}
+//     })
+// }
