@@ -35,7 +35,7 @@ navbar.innerHTML = ` <nav class="navbar navbar-expand-lg bg-body-tertiary" data-
         </ul>
 
         <button type="button" class="btn btn-primary duebtn">
-                Due <span class="badge text-bg-secondary"></span>
+                Due <span class="badge text-bg-danger">*</span>
               </button>
 
 
@@ -49,7 +49,7 @@ navbar.innerHTML = ` <nav class="navbar navbar-expand-lg bg-body-tertiary" data-
 //Cards
 for (i = 0; i < data.length; i++) {
     if (data[i].priority <= 1) {
-        display.innerHTML += `<div class="card mb-3" style="width: 18rem;">
+        display.innerHTML += `<div class="card mb-3 shadow-lg p-3 mb-5 bg-body-tertiary rounded" style="width: 18rem;">
     <img src="${data[i].pic}" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">${data[i].task}</h5>
@@ -120,7 +120,7 @@ for (let i = 0; i < donebtns.length; i++) {
 //Footer
 let footer = document.getElementById("footer");
 
-footer.innerHTML = ` <div class="container p-4">
+footer.innerHTML = ` <div class="container pt-4">
 
 <form action="">
 
@@ -132,9 +132,9 @@ footer.innerHTML = ` <div class="container p-4">
             </p>
         </div>
 
-        <div class="col-md-5 col-12">
+        <div class="col-md-3 col-12">
 
-            <div class="form-outline form-white mb-4">
+            <div class="form-outline form-white mb-2">
                 <input type="email" id="form5Example21" class="form-control" />
                 <label class="form-label" for="form5Example21">Email address</label>
             </div>
@@ -142,7 +142,7 @@ footer.innerHTML = ` <div class="container p-4">
 
         <div class="col-auto">
 
-            <button type="submit" class="btn btn-outline-light mb-4">Subscribe</button>
+            <button type="submit" class="btn btn-outline-light mb-2">Subscribe</button>
         </div>
 
     </div>
@@ -153,5 +153,5 @@ footer.innerHTML = ` <div class="container p-4">
 
 </div>
 
-<div class="text-center p-3 bg-dark">© 2020 Copyright: Julius Beer</div>
+<div class="text-center pb-3 bg-dark">© 2020 Copyright: Julius Beer</div>
 `
