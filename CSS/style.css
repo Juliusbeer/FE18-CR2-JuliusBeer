@@ -1,8 +1,8 @@
 .bg-img {
     background-image: url("https://cdn.pixabay.com/photo/2019/02/28/17/31/tasks-4026398_1280.jpg");
     background-size: cover;
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
 }
 
 .boxtEntry {
