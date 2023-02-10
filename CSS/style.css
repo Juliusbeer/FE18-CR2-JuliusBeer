@@ -5,15 +5,21 @@
     padding-bottom: 8rem;
 }
 
-.textEntry {
+.boxtEntry {
     text-align: center;
     align-items: center;
     height: 100px;
     width: 150px;
-    background-color: #bbb;
+    background-color: #383535;
     border-radius: 3%;
     margin: 0 auto;
-    opacity: 0.35;
+    opacity: 0.50;
+}
+
+#textEntry {
+    padding-top: 25%;
+    color: white;
+    opacity: 1;
 }
 
 .sort {
