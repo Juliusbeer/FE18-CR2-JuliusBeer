@@ -4,11 +4,14 @@ let data = JSON.parse(toDos);
 console.log(data);
 
 // //Due
-// let due= document.getElementsByClassName("duebtn");
+// let date = new Date();
+// let due = document.getElementsByClassName("duebtn");
+// console.log(date);
 
-// for(i=0;i<data.length;i++){
-//     if(data[i].deadline<=Date()){
-
+// for (i = 0; i < data.length; i++) {
+//     if (data[i].deadline <= date) {
+//         due.innerHTML += i++;
+//         var due1 = i;
 //     }
 // }
 
@@ -43,43 +46,57 @@ navbar.innerHTML = ` <nav class="navbar navbar-expand-lg bg-body-tertiary" data-
 </div>
 </nav>`
 
-//Sort
-// let priolink = document.getElementById("priority");
 
-// Don't know now
-// priolink.addEventListener("click",
-//     data.sort((a, b) => {
-//         return a.priority - b.priority;
-//     })
-// )
-
-
-
-console.log(data);
 
 //Cards
 for (i = 0; i < data.length; i++) {
-    if (data[i].priority <= 1) {
-        display.innerHTML += `<div class="card mb-3 shadow-lg p-3 mb-5 bg-body-tertiary rounded" style="width: 18rem;">
-    <img src="${data[i].pic}" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">${data[i].task}</h5>
-      <p class="card-text">Info: ${data[i].info}</p>
-      <hr>
-      <span class="card-text prio">Priority: </span><a href="#" class="btn priobtn btn-success"> ${data[i].priority}</a>
-      <p class="card-text">Deadline: ${data[i].deadline}</p>
-      <hr>
-      <a href="#" class="btn btn-success donebtn">Done</a>
-      <a href="#" class="btn btn-danger deletebtn">Delete</a>
-    </div>
-  </div>`;
-    }
+
+    display.innerHTML += `<div class="card mb-3 shadow-lg p-3 mb-5 bg-body-tertiary rounded" style="width: 18rem;">
+        <img src="${data[i].pic}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">${data[i].task}</h5>
+          <p class="card-text">Info: ${data[i].info}</p>
+          <hr>
+          <span class="card-text prio">Priority: </span><a href="#" class="btn priobtn btn-success"> ${data[i].priority}</a>
+          <p class="card-text">Deadline: ${data[i].deadline}</p>
+          <hr>
+          <a href="#" class="btn btn-success donebtn">Done</a>
+          <a href="#" class="btn btn-danger deletebtn">Delete</a>
+        </div>
+      </div>`;
 }
 
 
 
+//Sort
+let priolink = document.getElementById("priority");
 
 
+priolink.addEventListener("click", function() {
+    data.sort((a, b) => b.priority - a.priority);
+    console.log(data);
+    document.getElementById("results").remove();
+
+    display2 = document.getElementById("results2");
+
+    for (i = 0; i < data.length; i++) {
+
+        display2.innerHTML += `<div class="card mb-3 shadow-lg p-3 mb-5 bg-body-tertiary rounded" style="width: 18rem;">
+            <img src="${data[i].pic}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">${data[i].task}</h5>
+              <p class="card-text">Info: ${data[i].info}</p>
+              <hr>
+              <span class="card-text prio">Priority: </span><a href="#" class="btn priobtn btn-success"> ${data[i].priority}</a>
+              <p class="card-text">Deadline: ${data[i].deadline}</p>
+              <hr>
+              <a href="#" class="btn btn-success donebtn">Done</a>
+              <a href="#" class="btn btn-danger deletebtn">Delete</a>
+            </div>
+          </div>`;
+    }
+
+})
 
 //Prio
 
@@ -88,7 +105,7 @@ let priobtns = document.getElementsByClassName("priobtn");
 for (let i = 0; i < priobtns.length; i++) {
     priobtns[i].addEventListener("click", function() {
         data[i].priority++;
-        // console.log(people[i].like);
+        console.log(data[i].priority);
         priobtns[i].innerHTML = data[i].priority;
         if (data[i].priority <= 1) {
             priobtns[i].style.backgroundColor = "green";
@@ -97,13 +114,12 @@ for (let i = 0; i < priobtns.length; i++) {
             priobtns[i].style.color = "black";
         } else {
             priobtns[i].style.backgroundColor = "red";
+
         }
 
     })
 
 }
-
-
 
 //Done
 let donebtns = document.getElementsByClassName("donebtn");
@@ -166,5 +182,5 @@ footer.innerHTML = ` <div class="container pt-4">
 
 </div>
 
-<div class="text-center pb-3 bg-dark">© 2020 Copyright: Julius Beer</div>
+<div class="text-center pb-3 bg-dark">© 2023 Copyright: Julius Beer</div>
 `

@@ -4,14 +4,14 @@ let toDos = `[
 "info":"go to Prater",
 "priority":0,
 "deadline":"12.2.2023",
-"pic":"https://cdn.pixabay.com/photo/2015/12/01/20/28/forest-1072828_1280.jpg"
+"pic":"https://cdn.pixabay.com/photo/2017/04/09/09/56/avenue-2215317_1280.jpg"
     },
     {
         "task":"go shopping for the week",
         "info":"at Hofer",
         "priority":0,
         "deadline":"23.2.2023",
-        "pic":"https://cdn.pixabay.com/photo/2016/03/23/19/38/shopping-carts-1275480_1280.jpg"
+        "pic":"https://cdn.pixabay.com/photo/2018/01/25/08/14/beverages-3105631_1280.jpg"
             },
             {
                 "task":"go to the gym",
@@ -38,7 +38,7 @@ let toDos = `[
                                         "task":"Buy a scale",
                                         "info":"Media Markt",
                                         "priority":0,
-                                        "deadline":"15.2.2023",
+                                        "deadline":"11.2.2023",
                                         "pic":"https://cdn.pixabay.com/photo/2014/09/20/13/52/board-453758_1280.jpg"
                                             },
                                             {
@@ -53,7 +53,7 @@ let toDos = `[
                                                         "info":"Rax",
                                                         "priority":0,
                                                         "deadline":"15.2.2023",
-                                                        "pic":"https://cdn.pixabay.com/photo/2017/02/01/22/02/mountain-landscape-2031539_1280.jpg"
+                                                        "pic":"https://cdn.pixabay.com/photo/2020/06/15/15/16/the-caucasus-5302236_1280.jpg"
                                                             },
                                                             {
                                                                 "task":"clean the flat",
