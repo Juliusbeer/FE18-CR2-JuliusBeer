@@ -1,19 +1,18 @@
 let display = document.getElementById("results");
 
 let data = JSON.parse(toDos);
-console.log(data);
+// console.log(data);
 
-// //Due
-// let date = new Date();
+
+// // // //Due
+
 // let due = document.getElementsByClassName("duebtn");
-// console.log(date);
 
-// for (i = 0; i < data.length; i++) {
-//     if (data[i].deadline <= date) {
-//         due.innerHTML += i++;
-//         var due1 = i;
-//     }
-// }
+//Not sure how to get the count of all the tasks with pwio greater than 3..
+
+// const count = data.filter(x => x.priority > 3).length;
+
+// console.log(count);
 
 // Navbar
 let navbar = document.getElementById("navbar");
@@ -38,7 +37,7 @@ navbar.innerHTML = ` <nav class="navbar navbar-expand-lg bg-body-tertiary" data-
         </ul>
 
         <button type="button" class="btn btn-primary duebtn">
-                Due <span class="badge text-bg-danger">*</span>
+                Due <span class="badge text-bg-danger" id="duebtn1"></span>
               </button>
 
 
@@ -74,7 +73,7 @@ let priolink = document.getElementById("priority");
 
 priolink.addEventListener("click", function() {
     data.sort((a, b) => b.priority - a.priority);
-    console.log(data);
+    // console.log(data);
     document.getElementById("results").remove();
 
     display2 = document.getElementById("results2");
@@ -96,19 +95,44 @@ priolink.addEventListener("click", function() {
           </div>`;
     }
 
+    //Prio
+    let priobtns = document.getElementsByClassName("priobtn");
+    // console.log(priobtns);
+
+    for (let i = 0; i < priobtns.length; i++) {
+        priobtns[i].addEventListener("click", function() {
+            data[i].priority++;
+            // console.log(data[i].priority);
+            priobtns[i].innerHTML = data[i].priority;
+            if (data[i].priority <= 1) {
+                priobtns[i].style.backgroundColor = "green";
+                document.getElementById("duebtn1").innerHTML = "&#128276;"
+            } else if (data[i].priority <= 3) {
+                priobtns[i].style.backgroundColor = "yellow";
+                priobtns[i].style.color = "black";
+            } else {
+                priobtns[i].style.backgroundColor = "red";
+
+            }
+
+        })
+
+    }
 })
 
 //Prio
 
 let priobtns = document.getElementsByClassName("priobtn");
+// console.log(priobtns);
 
 for (let i = 0; i < priobtns.length; i++) {
     priobtns[i].addEventListener("click", function() {
         data[i].priority++;
-        console.log(data[i].priority);
+        // console.log(data[i].priority);
         priobtns[i].innerHTML = data[i].priority;
         if (data[i].priority <= 1) {
             priobtns[i].style.backgroundColor = "green";
+            document.getElementById("duebtn1").innerHTML = `&#128276;`;
         } else if (data[i].priority <= 3) {
             priobtns[i].style.backgroundColor = "yellow";
             priobtns[i].style.color = "black";
@@ -123,13 +147,15 @@ for (let i = 0; i < priobtns.length; i++) {
 
 //Done
 let donebtns = document.getElementsByClassName("donebtn");
-console.log(donebtns);
+// console.log(donebtns);
 
 for (let i = 0; i < donebtns.length; i++) {
     donebtns[i].addEventListener("click", function() {
         document.getElementsByClassName("card")[i].style.opacity = 0.25;
     })
 }
+
+
 
 //Delete
 // let deletebtns = document.getElementsByClassName("deletebtn");
